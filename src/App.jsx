@@ -1,21 +1,24 @@
 function App() {
-  // NOTE event handler function which triggers on the button or element click  where you have passed this fn..
-  //NOTE Event name always start with handle..
-  
+  // Event handler function that triggers when the button is clicked.
+  // Conventionally, event handler names start with "handle".
   const handleLoginClick = () => {
     alert('login click');
   };
-  //NOTE event handler for another event
+
+  // Event handler function that accepts an argument.
   const handlePrintName = (name) => {
     alert(`hi ${name}`);
   };
+
   return (
     <div>
-      //NOTE directly pass handler function in button
+      {/* Directly passing an inline function as the event handler */}
       <button onClick={() => console.log('hi')}>Click</button>
+
+      {/* Passing a predefined handler function without arguments */}
       <button onClick={handleLoginClick}>Login</button>
-      //NOTE if you have to pass argument in handler use a callback fn to call
-      the handler which is accepting arguments
+
+      {/* If the handler requires arguments, use an arrow function to pass them */}
       <button
         onClick={() => {
           handlePrintName('test');
