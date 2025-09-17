@@ -1,0 +1,30 @@
+//app main component
+
+function App(){
+const firstname = 'test'
+  return  (
+    <div>
+      <Button/>
+      <Button/>
+      <Button/>
+      Hello ,tst {firstname}
+    </div>
+  )
+}
+function Button(){
+  return (
+    <div>
+      <Test/>
+      <button>LOGIN</button>
+    </div>
+  )
+}
+
+function Test(){
+  return <div>this is test component</div>
+}
+export default App
+
+
+//component are js functions which starts with the extentions .jsx  
+//when you call a component in the jsx it always return the ui you want to render on the screen.

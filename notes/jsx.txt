@@ -1,0 +1,22 @@
+import './App.css'
+
+function App() {
+  const version = 19;
+  return (
+ <div>
+      <h1 style={{ color: 'red', backgroundColor: 'blue' }} className="heading">
+        REACT : {version}
+      </h1>
+      <input type="text" maxLength={10}/>
+      </div>
+  );
+}
+
+export default App;
+
+
+//pass css in the object in styles atttribute
+//use camelCase for attriute naming 
+//populate js varaibels using curly braces in the jsx
+//always pass number in {} braces as an value for attribute;
+//use className instead of class

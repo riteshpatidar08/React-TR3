@@ -1,0 +1,23 @@
+function App() {
+  return (
+    <div>
+      <Button title="Register" color='green' />
+      <Button title="Login" />
+      <Button title="Add To Cart" />
+    </div> 
+  );
+}
+
+function Button({ title,color }) {
+  console.log(title,color)
+  // console.log(props)
+  return <button style={{backgroundColor:color}}>{title}</button>;
+}
+export default App;
+
+
+
+// https://www.heroui.com/images/fruit-4.jpeg
+// https://www.heroui.com/images/fruit-1.jpeg
+
+// https://www.heroui.com/images/fruit-5.jpeg
