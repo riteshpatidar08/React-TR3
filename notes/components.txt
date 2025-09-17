@@ -1,30 +1,38 @@
-//app main component
+// App.jsx
 
-function App(){
-const firstname = 'test'
-  return  (
-    <div>
-      <Button/>
-      <Button/>
-      <Button/>
-      Hello ,tst {firstname}
-    </div>
-  )
-}
-function Button(){
+// ✅ React Functional Component: App is the main/root component of this application.
+function App() {
+  const firstname = 'test'; // ✅ Local variable in App component scope
+
   return (
     <div>
-      <Test/>
+      {/* ✅ Using the Button component 3 times */}
+      <Button />
+      <Button />
+      <Button />
+      
+      {/* ✅ Rendering dynamic value inside JSX */}
+      Hello, test {firstname}
+    </div>
+  );
+}
+
+// ✅ Button is a reusable functional component.
+// It returns a Test component and a LOGIN button.
+function Button() {
+  return (
+    <div>
+      <Test /> {/* ✅ Reusing another component */}
       <button>LOGIN</button>
     </div>
-  )
+  );
 }
 
-function Test(){
-  return <div>this is test component</div>
+// ✅ Test is a simple presentational component.
+// It returns a static UI.
+function Test() {
+  return <div>this is test component</div>;
 }
-export default App
 
-
-//component are js functions which starts with the extentions .jsx  
-//when you call a component in the jsx it always return the ui you want to render on the screen.
+// ✅ Always export your root component to use it in index.js or wherever it's rendered.
+export default App;
