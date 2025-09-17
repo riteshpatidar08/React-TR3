@@ -1,33 +1,25 @@
+import { useState } from 'react';
 function App() {
-  // Event handler function that triggers when the button is clicked.
-  // Conventionally, event handler names start with "handle".
-  const handleLoginClick = () => {
-    alert('login click');
-  };
+  console.log(useState('REACT'));
+  let [newTechnology, setNewTechnology] = useState('ANGULAR');
+  console.log(newTechnology);
 
-  // Event handler function that accepts an argument.
-  const handlePrintName = (name) => {
-    alert(`hi ${name}`);
+  const handleClick = () => {
+    setNewTechnology('REACT');
   };
-
   return (
     <div>
-      {/* Directly passing an inline function as the event handler */}
-      <button onClick={() => console.log('hi')}>Click</button>
-
-      {/* Passing a predefined handler function without arguments */}
-      <button onClick={handleLoginClick}>Login</button>
-
-      {/* If the handler requires arguments, use an arrow function to pass them */}
-      <button
-        onClick={() => {
-          handlePrintName('test');
-        }}
-      >
-        Print Name
-      </button>
+      <h1>{newTechnology}</h1>
+      <button onClick={handleClick}>Update</button>
     </div>
   );
 }
 
 export default App;
+
+//hooks  => js function
+
+
+//create three state variables like name , email , password ;
+
+// update all this at once when user click on a button
