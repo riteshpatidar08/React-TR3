@@ -9,7 +9,7 @@ function Navbar() {
   return (
     <header>
       <nav className="flex gap-6">
-        <Link className="text-3xl font-bold" to="/">
+        {/* <Link className="text-3xl font-bold" to="/">
           Home
         </Link>
         <Link className="text-3xl font-bold" to="/services">
@@ -17,7 +17,7 @@ function Navbar() {
         </Link>
         <Link className="text-3xl font-bold" to="/about-us">
           About
-        </Link>
+        </Link> */}
 
         {navlinks.map((nav) => (
           <Link className="text-3xl font-bold" to={nav.to}>
