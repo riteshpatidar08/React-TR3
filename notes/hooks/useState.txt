@@ -35,7 +35,7 @@ export default App;
 //NOTE UseState accepts initial value as a argument 
 //NOTE useState struture 
 // const [stateVariableName , setStateVariableFnName] = useState(initialvalue of stateVariable)
-//NOTE The work of stateVariableName is to show data on the ui
+//NOTE The work of stateVariableName is to show data on the ui.
 //NOTE this state varaible only going to update using the setter function
 //NOTE we can directly update the state variable like this stateVariable = 'some value' ❌ always use the setter function to update the state variable
 
