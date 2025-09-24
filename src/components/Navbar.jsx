@@ -1,18 +1,18 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 function Navbar() {
   return (
     <header>
       <nav className="flex gap-6">
-        <a className="text-3xl font-bold" href="">
+        <Link className="text-3xl font-bold" to="/">
           Home
-        </a>
-        <a className="text-3xl font-bold" href="">
+        </Link>
+        <Link className="text-3xl font-bold" to="/services">
           Service
-        </a>
-        <a className="text-3xl font-bold" href="">
+        </Link>
+        <Link className="text-3xl font-bold" to="/about-us">
           About
-        </a>
+        </Link>
       </nav>
     </header>
   );
