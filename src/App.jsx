@@ -1,35 +1,19 @@
-import React from 'react';
-import { useEffect , useState } from 'react';
+import Homepage from './pages/Homepage';
+import { Routes, Route } from 'react-router-dom';
+import Aboutuspage from './pages/Aboutuspage';
+import Servicepage from './pages/Servicepage';
+import Navbar from './components/Navbar';
 function App() {
-  const [products,setProduct] = useState([])
-  const [selectedId , setSelectedId] = useState(null);
-  useEffect(() => {
-    fetch('https://fakestoreapi.com/products')
-      .then((res) => res.json())
-      .then((data) => {
-        setProduct(data)
-      });
-  }, []);
-  const handleSelectChange = (e) => {
-    setSelectedId(e.target.value)
-  }
-
-  useEffect(()=>{
-    fetch(`https://fakestoreapi.com/products/${selectedId}`)
-    .then((res) => res.json())
-    .then((data) => {
-     console.log(data)
-    });
-  },[selectedId])
-  
-  return <div>
-    <select onChange={handleSelectChange} >
-      {products.map((product)=>(
-        <option value={product.id}>{product.title}</option>
-      ))}
-    </select>
-    <h1>{selectedId}</h1>
-  </div>;
+  return (
+    <div>
+      <Navbar/>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/about-us" element={<Aboutuspage />} />
+        <Route path="/services" element={<Servicepage />} />
+      </Routes>
+    </div>
+  );
 }
 
 export default App;
