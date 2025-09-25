@@ -5,6 +5,7 @@ import Servicepage from './pages/Servicepage';
 import Navbar from './components/Navbar';
 import Login from './pages/Login';
 import Productpage from './pages/Productpage';
+import ProductDetails from './pages/ProductDetails';
 function App() {
   return (
     <div>
@@ -14,7 +15,8 @@ function App() {
         <Route path="/about-us" element={<Aboutuspage />} />
         <Route path="/services" element={<Servicepage />} />
         <Route path='/login' element={<Login/>}/>
-        <Route path='/product' element={<Productpage/>}/>
+        <Route path='/products' element={<Productpage/>}/>
+        <Route path='/products/:id' element={<ProductDetails/>}
       </Routes>
     </div>
   );
