@@ -13,30 +13,30 @@ import ProtectedRoutes from './components/ProtectedRoutes';
 import { useState } from 'react';
 
 function App() {
+  // const [roles ,setRoles] = useState(['user']) ;
 
-  const [roles ,setRoles] = useState(['user']) ;
   return (
     <div>
       <Routes>
         {/* this is a open route */}
         <Route path="/login" element={<Login />} />
 
-        {/* this all going to  be protected routes */}
-        <Route
-          path="/"
-          element={
-            <ProtectedRoutes>
-              <Homepage />
-            </ProtectedRoutes>
-          }
-        />
-        {/* protected routes */}
-        <Route element={<ProtectedRoutes />}>
-          <Route path="/about-us" element={<Aboutuspage />} />
-          <Route path="/services" element={<Servicepage />} />
-          <Route path="/products" element={<Productpage />} />
-          <Route path="/products/:id" element={<ProductDetails />} />
-          <Route path="/dashboard" element={<Dashboardpage />}>
+        {/*
+         this all going to  be protected routes */}
+
+        {/* admin */}
+        <Route element={<ProtectedRoutes role={['admin']} />}>
+          <Route path="/dashboard" element={<Dashboardpage />}></Route>
+
+          {/* protected routes */}
+          <Route element={<ProtectedRoutes role={['admin', 'user']} />}>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/about-us" element={<Aboutuspage />} />
+
+            <Route path="/services" element={<Servicepage />} />
+            <Route path="/products" element={<Productpage />} />
+            <Route path="/products/:id" element={<ProductDetails />} />
+
             <Route index element={<Overviewpage />} />
             <Route path="overview" element={<Overviewpage />} />
             <Route path="customers" element={<Customerspage />} />
