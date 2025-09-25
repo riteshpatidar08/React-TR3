@@ -1,32 +1,46 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 function Navbar() {
   const navlinks = [
     { to: '/', title: 'Home' },
     { to: '/services', title: 'Services' },
     { to: '/about-us', title: 'About us' },
+    {to : '/products', title : "Products"}
   ];
+
   return (
-    <header>
-      <nav className="flex gap-6">
-        {/* <Link className="text-3xl font-bold" to="/">
-          Home
-        </Link>
-        <Link className="text-3xl font-bold" to="/services">
-          Service
-        </Link>
-        <Link className="text-3xl font-bold" to="/about-us">
-          About
-        </Link> */}
+    <header className="bg-white shadow-lg mb-10 sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+       
+          <div className="flex-shrink-0">
+            <Link 
+              to="/" 
+              className="text-2xl font-bold text-gray-800 hover:text-blue-600 transition-colors duration-200"
+            >
+         logo
+            </Link>
+          </div>
 
-        {navlinks.map((nav) => (
-          <Link className="text-3xl font-bold" to={nav.to}>
-            {nav.title}
-          </Link>
-        ))}
-      </nav>
-    </header>
-  );
+       
+          <nav className="">
+            <div className="ml-10 flex items-baseline space-x-8">
+              {navlinks.map((nav) => (
+                <Link
+                  key={nav.to}
+                  to={nav.to}
+                  className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-md font-medium transition-colors duration-200 hover:bg-gray-100"
+                >
+                  {nav.title}
+                </Link>
+              ))}
+            </div>
+          </nav>
+          </div>
+          </div>
+          </header>
+           )
 }
-
 export default Navbar;

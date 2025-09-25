@@ -1,6 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+
 function Login() {
+
   const navigate = useNavigate();
   const handleSubmit = () => {
     const isLogin = true;
@@ -8,6 +10,7 @@ function Login() {
       navigate('/');
     }
   };
+  
   return (
     <div>
       <form onSubmit={handleSubmit}>
