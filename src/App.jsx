@@ -9,15 +9,20 @@ import ProductDetails from './pages/ProductDetails';
 import Dashboardpage from './pages/Dashboardpage';
 import Overviewpage from './pages/Overviewpage';
 import Customerspage from './pages/Customerspage';
+import ProtectedRoutes from './components/ProtectedRoutes';
+
 function App() {
   return (
     <div>
-      <Navbar />
+   
       <Routes>
-        <Route path="/" element={<Homepage />} />
+ {/* this is a open route */}
+      <Route path="/login" element={<Login />} />
+
+{/* this all going to  be protected routes */}
+        <Route path="/" element={<ProtectedRoutes><Homepage /></ProtectedRoutes>} />
         <Route path="/about-us" element={<Aboutuspage />} />
         <Route path="/services" element={<Servicepage />} />
-        <Route path="/login" element={<Login />} />
         <Route path="/products" element={<Productpage />} />
         <Route path="/products/:id" element={<ProductDetails />} />
         <Route path="/dashboard" element={<Dashboardpage />}>
