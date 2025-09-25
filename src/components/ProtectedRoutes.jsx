@@ -3,7 +3,7 @@ import { Navigate, Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
 
 function ProtectedRoutes() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   if (!isLoggedIn) {
     return <Navigate to="/login" />;

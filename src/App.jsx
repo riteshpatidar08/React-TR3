@@ -10,25 +10,37 @@ import Dashboardpage from './pages/Dashboardpage';
 import Overviewpage from './pages/Overviewpage';
 import Customerspage from './pages/Customerspage';
 import ProtectedRoutes from './components/ProtectedRoutes';
+import { useState } from 'react';
 
 function App() {
+
+  const [roles ,setRoles] = useState(['user']) ;
   return (
     <div>
-   
       <Routes>
- {/* this is a open route */}
-      <Route path="/login" element={<Login />} />
+        {/* this is a open route */}
+        <Route path="/login" element={<Login />} />
 
-{/* this all going to  be protected routes */}
-        <Route path="/" element={<ProtectedRoutes><Homepage /></ProtectedRoutes>} />
-        <Route path="/about-us" element={<Aboutuspage />} />
-        <Route path="/services" element={<Servicepage />} />
-        <Route path="/products" element={<Productpage />} />
-        <Route path="/products/:id" element={<ProductDetails />} />
-        <Route path="/dashboard" element={<Dashboardpage />}>
-          <Route index element={<Overviewpage />} />
-          <Route path="overview" element={<Overviewpage />} />
-          <Route path="customers" element={<Customerspage />} />
+        {/* this all going to  be protected routes */}
+        <Route
+          path="/"
+          element={
+            <ProtectedRoutes>
+              <Homepage />
+            </ProtectedRoutes>
+          }
+        />
+        {/* protected routes */}
+        <Route element={<ProtectedRoutes />}>
+          <Route path="/about-us" element={<Aboutuspage />} />
+          <Route path="/services" element={<Servicepage />} />
+          <Route path="/products" element={<Productpage />} />
+          <Route path="/products/:id" element={<ProductDetails />} />
+          <Route path="/dashboard" element={<Dashboardpage />}>
+            <Route index element={<Overviewpage />} />
+            <Route path="overview" element={<Overviewpage />} />
+            <Route path="customers" element={<Customerspage />} />
+          </Route>
         </Route>
       </Routes>
     </div>
