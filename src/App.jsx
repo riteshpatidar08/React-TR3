@@ -7,6 +7,8 @@ import Login from './pages/Login';
 import Productpage from './pages/Productpage';
 import ProductDetails from './pages/ProductDetails';
 import Dashboardpage from './pages/Dashboardpage';
+import Overviewpage from './pages/Overviewpage';
+import Customerspage from './pages/Customerspage';
 function App() {
   return (
     <div>
@@ -18,7 +20,10 @@ function App() {
         <Route path='/login' element={<Login/>}/>
         <Route path='/products' element={<Productpage/>}/>
         <Route path='/products/:id' element={<ProductDetails/>}/>
-        <Route path='/dashboard' element={<Dashboardpage/>}/>
+        <Route path='/dashboard' element={<Dashboardpage/>}>
+         <Route path='overview' element={<Overviewpage/>}/>
+         <Route path='customers' element={<Customerspage/>}/>
+        </Route>
       </Routes>
     </div>
   );
