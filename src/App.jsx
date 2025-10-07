@@ -23,6 +23,7 @@ function App() {
 
   const [state, dispatch] = useReducer(reducer, initialState);
   console.log(state);
+
   //NOTE Handling api calls,using useReducer hook
   useEffect(() => {
     const fetchData = async () => {
@@ -40,6 +41,7 @@ function App() {
     };
     fetchData();
   }, []);
+
   return (
     <div>
       {state.loading && <div>Loading...</div>}
