@@ -9,7 +9,16 @@ function App() {
   };
 
   const reducer = (state, action) => {
-    console.log(action.payload);
+    if (action.type === 'FETCH_PENDING') {
+      return { ...state, loading: true };
+    } else if (action.type === 'FETCH_SUCCESS') {
+      console.log(action.payload);
+      return { ...state, loading: false, data: action.payload };
+    } else if (action.type === 'FETCH_FAILED') {
+      return { ...state, error: action.payload, loading: false };
+    } else {
+      return state;
+    }
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);
