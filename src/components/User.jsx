@@ -2,7 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import { DataContext } from '../context/DataContext';
 function User({ username }) {
-  const newUsername = useContext(DataContext);
+  const { username: newUsername, email } = useContext(DataContext);
   console.log(newUsername);
   console.log('user component is running');
   return (
@@ -10,6 +10,7 @@ function User({ username }) {
       <h1>User component</h1>
       <h1>Show user name : {username}</h1>
       <h1>{newUsername}</h1>
+      <h1>{email}</h1>
     </div>
   );
 }

@@ -8,9 +8,11 @@ export const DataContext = createContext();
 export const DataProvider = ({ children }) => {
   const [username, setUsername] = useState('Data shared using context api');
   console.log(children);
+  const [email, setEmail] = useState('test@gmail.com');
   return (
-    <DataContext.Provider value={username}>
-      {children} //app
+    <DataContext.Provider value={{ username, email }}>
+      {children}
+      {/* here the value of children itself is app component = app */}
     </DataContext.Provider>
   );
 };
