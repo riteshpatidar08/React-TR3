@@ -7,7 +7,7 @@ import { createContext  , useState} from "react";
 //NOTE STEP3 Create a PROVIDER COMPONENT where you can define the data which you are going to share across your react application.
 export const DataProvider = ({children}) => {
   const [name , setName] = useState('SHARED VIA CONTEXT')
-  // const sum  = (a,b) => {
+  //NOTE  const sum  = (a,b) => {
   //   return a + b
   // }
   return (
