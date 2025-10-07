@@ -15,4 +15,4 @@ console.log(name)
 
 export default User;
 
-//create a context file and create a function to fetch data from jsonplaceholder api then shared this function via context api and call in a component to fetch the data .
+//TODO create a context file and create a function to fetch data from jsonplaceholder api then shared this function via context api and then call the fn in a component to fetch the data .
