@@ -4,9 +4,7 @@ const counterSlice = createSlice({
   name: 'counter',
   initialState: { count: 0},
   reducers: {
-    increment: (state, action) => {
-      return { count: state.count + 1 };
-    },
+    increment: (state, action) => {state.count += 1}, //note in the toolkit we can direclty update the state variables because internally it uses immer library https://immerjs.github.io/immer/
     decrement: (state, action) => {
       return { count: state.count - 1 };
     },
