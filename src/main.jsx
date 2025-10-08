@@ -4,12 +4,12 @@ import './index.css';
 import App from './App.jsx';
 import { BrowserRouter } from 'react-router-dom';
 import { DataProvider } from './context/DataContext.jsx';
+import { Provider } from 'react-redux';
+import store from './redux/store.js';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
-      <DataProvider>
-        <App />
-      </DataProvider>
-    </BrowserRouter>
+    <Provider store={store}>
+      <App />
+    </Provider>
   </StrictMode>
 );
