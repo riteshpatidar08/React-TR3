@@ -4,9 +4,8 @@ import { useEffect } from 'react';
 import { increment } from './redux/slices/CounterSlice';
 import { pending, success } from './redux/slices/TodoSlice';
 function App() {
-
   const { count } = useSelector((state) => state.count);
-  const {loading , todos} = useSelector((state)=>state.todos)
+  const { loading, todos } = useSelector((state) => state.todos);
   const dispatch = useDispatch();
 
   const handleIncrement = () => {
@@ -21,11 +20,8 @@ function App() {
           'https://jsonplaceholder.typicode.com/todos'
         );
         const data = await response.json();
-dispatch(success(data))
-      
-      } catch (error) {
-      
-      }
+        dispatch(success(data));
+      } catch (error) {}
     };
     fetchData();
   }, []);
@@ -39,7 +35,7 @@ dispatch(success(data))
       >
         Increment
       </button>
-      {loading && <div className='text-3xl'>Loading....</div>}
+      {loading && <div className="text-3xl">Loading....</div>}
 
       {todos && !loading && <div>{JSON.stringify(todos)}</div>}
     </div>
