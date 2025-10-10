@@ -66,8 +66,8 @@
 const path = require('path');
 
 // __filename __dirname
-console.log(__filename);
-console.log(__dirname);
+console.log(__filename); //gives the absolute path of you current file you are working in
+console.log(__dirname); //gives the absolute path of the directory which you current file exist .
 
 //path.join
 //NOTE join the files and folder you pass as a argument in the join method to make the path
@@ -80,28 +80,27 @@ console.log(completePath);
 
 //NOTE path.resolve
 //what path.resolve does it automatically get the abosolute url for the current working directly then it add the file and folder you are going to pass in the path.resolve method
-const completepath = path.resolve('script.js')
-console.log(completepath)
+const completepath = path.resolve('script.js');
+console.log(completepath);
 
 const fs = require('fs');
-fs.readFile(path.resolve('transfer.txt'), 'utf-8', (err,data)=>{
-console.log(data)
-})
+fs.readFile(path.resolve('transfer.txt'), 'utf-8', (err, data) => {
+  console.log(data);
+});
 
-//NOTE get file name 
-console.log(path.basename('/folder/file.txt'))
-//NOTE  get file extension 
-console.log(path.extname('file.txt'))
+//NOTE get file name
+console.log(path.basename('/folder/file.txt'));
+//NOTE  get file extension
+console.log(path.extname('file.txt'));
 
-//NOTE get directory name 
-console.log(path.dirname('/newfolder/file.txt'))
+//NOTE get directory name
+console.log(path.dirname('/newfolder/file.txt'));
 
+//os module
 
-//os module 
-
-const os = require('os') ;
-console.log(os.platform())
-console.log(os.freemem()) ;
-console.log(os.hostname())
-console.log(os.cpus())
-console.log(os.arch())
+const os = require('os');
+console.log(os.platform());
+console.log(os.freemem());
+console.log(os.hostname());
+console.log(os.cpus());
+console.log(os.arch());
