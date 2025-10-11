@@ -25,7 +25,14 @@ app.get('/news', (req, res) => {
 });
 //get single news 
 app.get('/news/:id' , (req,res)=>{
-    console.log(req.params.id)
+  const id = +req.params.id
+  console.log(typeof id)
+  const data = fs.readFileSync('news.json', 'utf-8') ;
+  const convertedData = JSON.parse(data) ;
+ const singleNews = convertedData.find((d)=>d.id === id)
+ res.status(200).json({
+    data  : singleNews
+ })
 })
 
 app.listen(3000, () => {
