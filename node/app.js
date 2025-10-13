@@ -4,6 +4,9 @@ const express = require('express');
 const app = express();
 const fs = require('fs');
 
+app.use(express.json());
+
+
 app.get('/', (req, res) => {
   res.send('hello from the express');
 });
@@ -35,9 +38,9 @@ app.get('/news/:id', (req, res) => {
   });
 });
 
-//add a new article
+//add a new article //create an article
 app.post('/news', (req, res) => {
-  console.log(req.body);
+  console.log('data from client' , req.body);
 });
 
 
