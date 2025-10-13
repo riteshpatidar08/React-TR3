@@ -56,6 +56,10 @@ app.post('/news', (req, res) => {
     date,
   };
   console.log(newNewsData);
+  parseNews.push(newNewsData);
+  fs.writeFile('news.json', JSON.stringify(parseNews), () => {
+    res.send('New article added ');
+  });
   //calculating id for new item
 });
 
