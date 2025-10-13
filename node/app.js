@@ -23,18 +23,25 @@ app.get('/news', (req, res) => {
     }
   });
 });
-//get single news 
-app.get('/news/:id' , (req,res)=>{
-  const id = +req.params.id
-  console.log(typeof id)
-  const data = fs.readFileSync('news.json', 'utf-8') ;
-  const convertedData = JSON.parse(data) ;
- const singleNews = convertedData.find((d)=>d.id === id)
- res.status(200).json({
-    data  : singleNews
- })
-})
+//get single news
+app.get('/news/:id', (req, res) => {
+  const id = +req.params.id;
+  console.log(typeof id);
+  const data = fs.readFileSync('news.json', 'utf-8');
+  const convertedData = JSON.parse(data);
+  const singleNews = convertedData.find((d) => d.id === id);
+  res.status(200).json({
+    data: singleNews,
+  });
+});
+
+//add a new article
+app.post('/news', (req, res) => {
+  console.log(req.body);
+});
+
+
 
 app.listen(3000, () => {
-  console.log('server is running');
+  console.log('server is running on 3000 port');
 });
