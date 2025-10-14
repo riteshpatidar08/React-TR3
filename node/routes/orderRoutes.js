@@ -1,8 +1,7 @@
-const express = require('express') ;
-const router = express.Router() ;
+const express = require('express');
+const router = express.Router();
+const { getAllOrder } = require('../controllers/orderControllers.js');
 
-router.get('/orders' ,(req,res)=>{
-    res.send('order coming from the routes file')
-})
+router.get('/orders', getAllOrder);
 
-module.exports = router
+module.exports = router;

@@ -11,7 +11,7 @@ app.get('/', (req,res)=>{
 app.get('/order', (req,res)=>{
     res.send("ALL ORDER")
 })
-//1st routes setup
+//routes for all resource
 app.use('/api',orderRoutes)
 
 app.listen(3000,()=>{
