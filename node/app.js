@@ -7,10 +7,10 @@ app.get('/', (req,res)=>{
     res.send("HOMEPAGE")
 })
 
-//RESOURCE = orders
-app.get('/order', (req,res)=>{
-    res.send("ALL ORDER")
-})
+// //RESOURCE = orders
+// app.get('/order', (req,res)=>{
+//     res.send("ALL ORDER")
+// })
 //routes for all resource
 app.use('/api',orderRoutes)
 
