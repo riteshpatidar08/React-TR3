@@ -1,19 +1,19 @@
 const express = require('express') ;
+const mongoose = require('mongoose')
 const app = express() ;
-const orderRoutes = require('./routes/orderRoutes.js')
 
+const connectDB = async()=>{
+    try {
+        const connection = await mongoose.connect('mongodb://127.0.0.1:27017/mongodbTR3')
+        console.log('CONNECTION SUCCESSFULL')
+    } catch (error) {
+        console.log(error)
+    }
+}
 
-app.get('/', (req,res)=>{
-    res.send("HOMEPAGE")
-})
+connectDB()
 
-// //RESOURCE = orders
-// app.get('/order', (req,res)=>{
-//     res.send("ALL ORDER")
-// })
-//routes for all resource
-app.use('/api',orderRoutes)
 
 app.listen(3000,()=>{
-    console.log("server is running on port 3000")
+    console.log('server is running on 3000')
 })
