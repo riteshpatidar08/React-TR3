@@ -24,3 +24,19 @@ exports.createUser  = async (req,res) => {
         
     }
 }
+
+exports.getAllUser = async(req,res) => {
+    try {
+        const user = await User.find() ;
+        if(user.length <= 0){
+            res.status(404).json({
+                message : "No user found"
+            })
+        }
+        res.status(200).json({
+            user
+        })
+    } catch (error) {
+    
+  }
+}
