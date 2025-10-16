@@ -1,7 +1,8 @@
 const express = require('express') ;
 const mongoose = require('mongoose')
 const app = express() ;
-const userRoutes = require('express')
+const userRoutes = require('./routes/userRoutes.js')
+app.use(express.json());
 const connectDB = async()=>{
     try {
         const connection = await mongoose.connect('mongodb://127.0.0.1:27017/mongodbTR3')
