@@ -1,10 +1,13 @@
 const User = require('../models/user.js');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-
+const cloudinary = require('../config/cloudinary.js')
 exports.register = async (req, res) => {
   try {
     console.log(req.file)
+
+    const result  = await cloudinary.uploader.upload(req.file.path) ;
+    console.log(result)
     const { email, name, password } = req.body;
     console.log(email, name, password);
     const user = await User.findOne({ email });
