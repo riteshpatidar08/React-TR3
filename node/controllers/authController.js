@@ -1,8 +1,10 @@
 const User = require('../models/user.js');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+
 exports.register = async (req, res) => {
   try {
+    console.log(req.file)
     const { email, name, password } = req.body;
     console.log(email, name, password);
     const user = await User.findOne({ email });
@@ -13,7 +15,7 @@ exports.register = async (req, res) => {
     }
     //password hash
     const passwordHash = await bcrypt.hash(password, 12);
-    const newUser = await User.create({ name, email, password: passwordHash });
+    const newUser = await User.create({ name, email, password: passwordHash , avatar : req.file.path });
     res.status(201).json({
       message: 'User created',
       newUser,
